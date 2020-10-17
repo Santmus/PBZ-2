@@ -1,5 +1,6 @@
 package com.company.Interface;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SystemInterface {
@@ -23,7 +24,7 @@ public class SystemInterface {
       operation(operation);
   }
 
-  public void operation(int operation){
+  public void operation(int operation) {
       if(operation == 0) System.exit(-0);
       else if(operation == 1) getInformationAboutCommand();
       else if(operation == 2) getInformationAboutCorrespodent();
@@ -45,10 +46,11 @@ public class SystemInterface {
     private void getInformationAboutCorrespodentWhichDoesNotCompleteEvent() {
     }
 
-    private void getInformationAboutCorrespodent() {
+    private void getInformationAboutCorrespodent()  {
+      Information.getInformationAboutCorrespodentList();
     }
-
     private void getInformationAboutCommand() {
+        Information.getInformationAboutCommandList();
     }
 
 
