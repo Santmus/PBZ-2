@@ -1,4 +1,4 @@
-package sample.database;
+package com.company.DataBase;
 
 public class Const {
 
