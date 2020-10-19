@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static SystemInterface systemInterface;
-
     public static void main(String[] args) {
         authorization();
     }
@@ -17,8 +15,8 @@ public class Main {
         String str = cout.nextLine();
         System.out.println("Введите пароль:");
         String passwStr = passw.nextLine();
-       checkAuthorization(str,passwStr);
-        systemInterface = new SystemInterface();
+        checkAuthorization(str,passwStr);
+        SystemInterface systemInterface = new SystemInterface();
         systemInterface.begin(str);
    }
 

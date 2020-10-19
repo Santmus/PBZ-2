@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS outgoing_correspondent;
-
 USE PBZ_2;
+
+DROP TABLE IF EXISTS outgoing_correspondent;
 
 CREATE TABLE outgoing_correspondent (
 id_correspodent INT PRIMARY KEY AUTO_INCREMENT,

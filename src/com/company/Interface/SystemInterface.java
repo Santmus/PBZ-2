@@ -1,6 +1,4 @@
 package com.company.Interface;
-
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SystemInterface {

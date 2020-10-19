@@ -1,6 +1,7 @@
+USE PBZ_2;
+
 DROP TABLE IF EXISTS command;
 
-USE PBZ_2;
 
 CREATE TABLE command (
 id_command INT PRIMARY KEY AUTO_INCREMENT,
