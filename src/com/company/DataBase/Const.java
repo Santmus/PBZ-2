@@ -10,7 +10,10 @@ public class Const {
 
     public static final String SELECT_NOT_COMPLETE_EVENT = "SELECT now(), date_command, event_command,date_performance_event, responsible_for_implementation FROM command WHERE check_date_performance_event = 'Нет';";
 
+    public static final String SELECT_DIFFERENT_DOCUMENTS = "SELECT name_company,now(),number_command,date_command,check_date_performance_event FROM documents WHERE type_of_document IN( ";
+
     public static final String INSERT_INTO_CORRESPODENT = "INSERT INTO outgoing_correspondent VALUES(";
+
 
 
 }

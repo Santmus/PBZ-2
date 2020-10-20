@@ -17,10 +17,9 @@ public class SystemInterface {
       System.out.println("3. Просмотр списка исходящих корреспондентов, мероприятия по которым на\n" +
               "заданную дату не были выполнены");
       System.out.println("4. Просмотр списка мероприятий за заданный период");
-      System.out.println("5. Просмотр имени сотрудника получившего издание");
-      System.out.println("6. Просмотр списка всех зафиксированных документов заданного типа (например,\n" +
+      System.out.println("5. Просмотр списка всех зафиксированных документов заданного типа (например,\n" +
               "приказов) на текущую дату, отсортированных по дате документа");
-      System.out.println("7. Добавление/редактирование/удаление информации");
+      System.out.println("6. Добавление/редактирование/удаление информации");
       Scanner sout = new Scanner(System.in);
       int operation = sout.nextInt();
       operation(operation);
@@ -32,11 +31,11 @@ public class SystemInterface {
       else if(operation == 2) getInformationAboutCorrespodent();
       else if(operation == 3) getInformationAboutCorrespodentWhichDoesNotCompleteEvent();
       else if(operation == 4) getInformationListOfEvents();
-      else if (operation == 5) getInformationCommandCertainType();
-      else if (operation == 7) editTables();
+      else if (operation == 5) getInformationAboutDocument();
+      //else if (operation == 6) editTables();
   }
 
-    private void editTables() {
+    /*private void editTables() {
       Scanner cout = new Scanner(System.in);
       Scanner sout = new Scanner(System.in);
       System.out.println("Что вы хотите сделать:\n1-Добавить информацию\n2-Удалить пользователя\n3-Изменить информацию ");
@@ -57,12 +56,10 @@ public class SystemInterface {
               break;
           }
       }
-
+    }*/
+    private void getInformationAboutDocument() {
+      Information.getInformationAboutDocument();
     }
-
-    private void getInformationCommandCertainType() {
-    }
-
     private void getInformationListOfEvents() {
       Information.getInformationListOfEvents();
     }
