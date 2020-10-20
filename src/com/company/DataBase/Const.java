@@ -8,7 +8,7 @@ public class Const {
     public static final String SELECT_CHECK_DATE_PART1 = "SELECT date_command,date_performance_event,event_command,check_date_performance_event FROM command WHERE date_command > ";
     public static final String SELECT_CHECK_DATE_PART2 = " AND date_performance_event < ";
 
-    public static final String SELECT_NOT_COMPLETE_EVENT = "SELECT now(), date_command, event_command,date_performance_event, responsible_for_implementation FROM command WHERE check_date_performance_event = 'Нет';";
+    public static final String SELECT_NOT_COMPLETE_EVENT = "SELECT now(), date_command, event_command,date_performance_event, responsible_for_implementation FROM command WHERE check_date_performance_event = 'Нет' AND date_performance_event >  ";
 
     public static final String SELECT_DIFFERENT_DOCUMENTS = "SELECT name_company,now(),number_command,date_command,check_date_performance_event FROM documents WHERE type_of_document IN( ";
 

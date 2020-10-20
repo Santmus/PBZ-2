@@ -27,4 +27,4 @@ WHERE  date_command > '2020-03-18' and date_performance_event < '2020-09-24';
 
 SELECT now(), date_command, event_command,date_performance_event, responsible_for_implementation
 FROM command
-WHERE check_date_performance_event = 'Нет';
+WHERE check_date_performance_event = 'Нет' and '2020-09-20' < date_performance_event;
