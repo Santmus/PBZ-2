@@ -2,7 +2,6 @@ USE PBZ_2;
 
 DROP TABLE IF EXISTS command;
 
-
 CREATE TABLE command (
 id_command INT PRIMARY KEY AUTO_INCREMENT,
 number_command VARCHAR(10),
@@ -25,3 +24,7 @@ VALUES (1,'№324','2020-04-18','Привести двигатели к полн
 SELECT date_command,date_performance_event,event_command,check_date_performance_event
 FROM command
 WHERE  date_command > '2020-03-18' and date_performance_event < '2020-09-24';
+
+SELECT now(), date_command, event_command,date_performance_event, responsible_for_implementation
+FROM command
+WHERE check_date_performance_event = 'Нет';

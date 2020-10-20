@@ -11,18 +11,7 @@ public class Command {
     private String responsible_for_implementation;
     private Date date_performance_event;
     private String check_date_performance_event;
-   /*
-   `public Command(String number_command,Date date_command,String content_command,String event_command,String responsible_for_implementation,
-                   Date date_performance_event,String check_date_performance_event){
-        this.number_command = number_command;
-        this.date_command = date_command;
-        this.content_command = content_command;
-        this.event_command = event_command;
-        this.responsible_for_implementation = responsible_for_implementation;
-        this.date_performance_event = date_performance_event;
-        this.check_date_performance_event = check_date_performance_event;
-    }
-    */
+
     public String getResponsible_for_implementation() {
         return responsible_for_implementation;
     }
