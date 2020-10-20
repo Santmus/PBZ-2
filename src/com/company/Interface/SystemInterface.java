@@ -39,9 +39,11 @@ public class SystemInterface {
     }
 
     private void getInformationListOfEvents() {
+      Information.getInformationListOfEvents();
     }
 
     private void getInformationAboutCorrespodentWhichDoesNotCompleteEvent() {
+
     }
 
     private void getInformationAboutCorrespodent()  {
