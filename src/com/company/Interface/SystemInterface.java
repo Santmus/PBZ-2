@@ -83,6 +83,7 @@ public class SystemInterface {
                       TableEditor.addRecordCommand(number_command,date_command,content_command,event_command,responsible_for_implementation,date_performance_event,check_date_performance_event);
                       break;
                   }
+                 //обновление внутренних приказов
                   case 2 : {
                       Scanner numberCommand = new Scanner(System.in);
                       System.out.println("Введите номер приказа: ");
@@ -147,9 +148,38 @@ public class SystemInterface {
                               newDate_performance_event, check_date_performance_event, newCheck_date_performance_event);
                       break;
                   }
-                      case 3:
-                      {
-                          break;
+                  //удаление внутренних приказов
+                  case 3: {
+                      Scanner numberCommand = new Scanner(System.in);
+                      System.out.println("Введите номер приказа: ");
+                      String  number_command = numberCommand.nextLine();
+
+                      Scanner dateCommand =  new Scanner(System.in);
+                      System.out.println("Введите дату приказа: ");
+                      String date_command = dateCommand.next();
+
+                      Scanner contentCommand  = new Scanner(System.in);
+                      System.out.println("Введите описание приказа: ");
+                      String  content_command = contentCommand.nextLine();
+
+                      Scanner eventCommand = new Scanner(System.in);
+                      System.out.println("Введите место выполнения приказа: ");
+                      String  event_command = eventCommand.nextLine();
+
+                      Scanner responsibleForImplementation  = new Scanner(System.in);
+                      System.out.println("Введите отвественный за выполнение приказа: ");
+                      String  responsible_for_implementation = responsibleForImplementation.nextLine();
+
+                      Scanner datePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Введите дату окончание выполнение приказа: ");
+                      String  date_performance_event = datePerformanceEvent.nextLine();
+
+                      Scanner checkDatePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Выполнен ли приказ: ");
+                      String  check_date_performance_event = checkDatePerformanceEvent.nextLine();
+
+                      TableEditor.deleteRecordCommand(number_command,date_command,content_command,event_command,responsible_for_implementation,date_performance_event,check_date_performance_event);
+                      break;
                       }
                   }
              break;
