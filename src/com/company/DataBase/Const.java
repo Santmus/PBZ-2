@@ -12,7 +12,7 @@ public class Const {
 
     public static final String SELECT_DIFFERENT_DOCUMENTS = "SELECT name_company,now(),number_command,date_command,check_date_performance_event FROM documents WHERE type_of_document IN( ";
 
-    public static final String INSERT_INTO_CORRESPODENT = "INSERT INTO outgoing_correspondent VALUES(";
+    public static final String INSERT_INTO_COMMAND = "INSERT INTO command (number_command, date_command, content_command, event_command, responsible_for_implementation, date_performance_event, check_date_performance_event) VALUES (?,?,?,?,?,?,?);";
 
 
 

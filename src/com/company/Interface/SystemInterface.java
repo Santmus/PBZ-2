@@ -32,43 +32,77 @@ public class SystemInterface {
       else if(operation == 3) getInformationAboutCorrespodentWhichDoesNotCompleteEvent();
       else if(operation == 4) getInformationListOfEvents();
       else if (operation == 5) getInformationAboutDocument();
-      //else if (operation == 6) editTables();
+      else if (operation == 6) editTables();
   }
 
-    /*private void editTables() {
-      Scanner cout = new Scanner(System.in);
-      Scanner sout = new Scanner(System.in);
-      System.out.println("Что вы хотите сделать:\n1-Добавить информацию\n2-Удалить пользователя\n3-Изменить информацию ");
-      int x = cout.nextInt();
-      System.out.println("Какую таблицу вы хотите изменить?\n1-Корреспондентов\n2-Приказах");
-      int table = sout.nextInt();
-      switch (x){
-          case 1:{
-              TableEditor.addRecord(table);
-              break;
-          }
-          case 2:{
-              TableEditor.changeRecord(table);
-              break;
-          }
-          case 3:{
-              TableEditor.deleteRecord(table);
-              break;
+  private void editTables() {
+      Scanner choose = new Scanner(System.in);
+      System.out.println("Что вы хотите изменить?\n1-Информацию о внутр.приказах\n2-Информацию о корреспондетах");
+      int number = choose.nextInt();
+      switch (number) {
+          case 1: {
+              Scanner scanner = new Scanner(System.in);
+              System.out.println("Выберите действие:");
+              System.out.println("1.Добавление информации о внутр.приказах.");
+              System.out.println("2.Редактирование информации о внутр.приказах .");
+              System.out.println("3.Удаление информаации о внутр.приказах.");
+              int numb = scanner.nextInt();
+              switch (numb){
+                  case 1:{
+                      Scanner numberCommand = new Scanner(System.in);
+                      System.out.println("Введите номер приказа: ");
+                      String  number_command = numberCommand.nextLine();
+
+                      Scanner dateCommand =  new Scanner(System.in);
+                      System.out.println("Введите дату приказа: ");
+                      String  date_command = dateCommand.nextLine();
+
+                      Scanner contentCommand  = new Scanner(System.in);
+                      System.out.println("Введите описание приказа: ");
+                      String  content_command = contentCommand.nextLine();
+
+                      Scanner eventCommand = new Scanner(System.in);
+                      System.out.println("Введите место выполнения приказа: ");
+                      String  event_command = eventCommand.nextLine();
+
+                      Scanner responsibleForImplementation  = new Scanner(System.in);
+                      System.out.println("Введите отвественный за выполнение приказа: ");
+                      String  responsible_for_implementation = responsibleForImplementation.nextLine();
+
+                      Scanner datePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Введите дату окончание выполнение приказа: ");
+                      String  date_performance_event = datePerformanceEvent.nextLine();
+
+                      Scanner checkDatePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Выполнен ли приказ: ");
+                      String  check_date_performance_event = checkDatePerformanceEvent.nextLine();
+                      TableEditor.addRecordCorrespodents(number_command,date_command,content_command,event_command,responsible_for_implementation,date_performance_event,check_date_performance_event);
+                      break;
+                  }
+                  case 2 :{
+                      break;
+                  }
+              }
           }
       }
-    }*/
+   }
+
     private void getInformationAboutDocument() {
       Information.getInformationAboutDocument();
     }
+
     private void getInformationListOfEvents() {
       Information.getInformationListOfEvents();
     }
+
     private void getInformationAboutCorrespodentWhichDoesNotCompleteEvent() {
     Information.getInformationAboutCorrespodentWhichDoesNotCompleteEvent();
     }
+
     private void getInformationAboutCorrespodent()  {
       Information.getInformationAboutCorrespodentList();
     }
+
     private void getInformationAboutCommand() {
         Information.getInformationAboutCommandList();
     }
