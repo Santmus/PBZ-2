@@ -83,7 +83,7 @@ public class SystemInterface {
                       TableEditor.addRecordCommand(number_command,date_command,content_command,event_command,responsible_for_implementation,date_performance_event,check_date_performance_event);
                       break;
                   }
-                 //обновление внутренних приказов
+                 //изменение внутренних приказов
                   case 2 : {
                       Scanner numberCommand = new Scanner(System.in);
                       System.out.println("Введите номер приказа: ");
@@ -192,6 +192,7 @@ public class SystemInterface {
               System.out.println("3.Удаление информаации о корресподентах.");
               int numb = scanner.nextInt();
               switch (numb){
+                  //добавление нового корресподента
                   case 1:{
                       Scanner nameSubdivision = new Scanner(System.in);
                       System.out.println("Введите номер подраздеения: ");
@@ -201,17 +202,43 @@ public class SystemInterface {
                       System.out.println("Введите должность корресподента : ");
                       String position_correspodent = positionСorrespodent.next();
 
-                      Scanner surnameТame  = new Scanner(System.in);
+                      Scanner surnameName  = new Scanner(System.in);
                       System.out.println("Введите ФИО корресподента: ");
-                      String  surname_name = surnameТame.nextLine();
-                      TableEditor.addCorrespodent(name_subdivision,position_correspodent,surname_name);
+                      String  surname_name = surnameName.nextLine();
 
+                      TableEditor.addCorrespodent(name_subdivision,position_correspodent,surname_name);
                       break;
                   }
+                  //изменение корресподента
                   case 2:{
+                      Scanner nameSubdivision = new Scanner(System.in);
+                      System.out.println("Введите номер приказа: ");
+                      String name_subdivision = nameSubdivision.nextLine();
+
+                      Scanner newNameSubdivision = new Scanner(System.in);
+                      System.out.println("Введите новый номер приказа: ");
+                      String newName_subdivision = newNameSubdivision.nextLine();
+
+                      Scanner positionСorrespodent = new Scanner(System.in);
+                      System.out.println("Введите должность корресподента : ");
+                      String position_correspodent = positionСorrespodent.nextLine();
+
+                      Scanner newPositionСorrespodent = new Scanner(System.in);
+                      System.out.println("Введите новую должность корресподента : ");
+                      String newPosition_correspodent = newPositionСorrespodent.nextLine();
+
+                      Scanner surnameName = new Scanner(System.in);
+                      System.out.println("Введите ФИО корресподента: ");
+                      String surname_name = surnameName.nextLine();
+
+                      Scanner newSurnameName = new Scanner(System.in);
+                      System.out.println("Введите новую ФИО корресподента: ");
+                      String newSurname_name = newSurnameName.nextLine();
+                      TableEditor.UpdateCorrespodent(name_subdivision,newName_subdivision,position_correspodent,newPosition_correspodent,surname_name,newSurname_name);
                       break;
                   }
                   case 3:{
+
                       break;
                   }
               }

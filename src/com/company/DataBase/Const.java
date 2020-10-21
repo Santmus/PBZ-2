@@ -16,8 +16,10 @@ public class Const {
     public static final String INSERT_INTO_CORRESPODENT = "INSERT INTO outgoing_correspondent (name_subdivision, position_correspodent, surname_name) VALUES (?,?,?)";
 
     public static final String UPDATE_COMMAND = "UPDATE command SET number_command = ? , date_command = ? , content_command = ? , event_command = ? , responsible_for_implementation = ? , date_performance_event = ? , check_date_performance_event = ? WHERE number_command = ? && date_command = ? && content_command = ? &&  event_command = ? && responsible_for_implementation = ? && date_performance_event = ? && check_date_performance_event = ?";
+    public static final String UPDATE_CORRESPODENT = "UPDATE outgoing_correspondent SET name_subdivision = ? , position_correspodent = ? , surname_name = ?  WHERE name_subdivision = ? && position_correspodent = ? && surname_name = ?";
 
     public static final String DELETE_COMMAND = "DELETE FROM command WHERE number_command = ? && date_command = ? && content_command = ? &&  event_command = ? && responsible_for_implementation = ? && date_performance_event = ? && check_date_performance_event = ? ";
+    public static final String DELETE_CORRESPODENT = "DELETE FROM outgoing_correspondent WHERE name_subdivision = ? && position_correspodent = ? && surname_name = ?";
 
 
 

@@ -68,7 +68,7 @@ public class TableEditor {
         }
 
     }
-
+    //удаление
     public static void deleteRecordCommand(String number_command, String date_command, String content_command,
                                            String event_command, String responsible_for_implementation,
                                            String date_performance_event, String check_date_performance_event) {
@@ -90,7 +90,7 @@ public class TableEditor {
             throwables.printStackTrace();
         }
     }
-   //удаление
+   //добавление
     public static void addCorrespodent(String name_subdivision, String position_correspodent, String surname_name) {
         PreparedStatement addingCorrespodent = null;
         try {
@@ -105,5 +105,29 @@ public class TableEditor {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+
     }
+
+    //обновление
+    public static void UpdateCorrespodent(String name_subdivision, String newName_subdivision, String position_correspodent,
+                                          String newPosition_correspodent, String surname_name, String newSurname_name) {
+        PreparedStatement updatingRecordCommand = null;
+        try {
+            Connection connection = DriverManager.getConnection(configs.dbConnection + configs.dbHost + configs.dbPort + configs.dbName , configs.dbUser, configs.dbPass);
+            System.out.println("Подключение произошло успешно: " + configs.dbConnection + configs.dbHost+ configs.dbPort+configs.dbName + "," + configs.dbUser + "," + configs.dbPass);
+            Statement statement = connection.createStatement();
+            updatingRecordCommand = connection.prepareStatement(Const.UPDATE_CORRESPODENT);
+            updatingRecordCommand.setString(1, newName_subdivision);
+            updatingRecordCommand.setString(2, newPosition_correspodent);
+            updatingRecordCommand.setString(3, newSurname_name);
+            updatingRecordCommand.setString(4, name_subdivision);
+            updatingRecordCommand.setString(5, position_correspodent);
+            updatingRecordCommand.setString(6, surname_name);
+            updatingRecordCommand.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }
