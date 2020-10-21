@@ -105,12 +105,10 @@ public class TableEditor {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
     }
 
     //обновление
-    public static void UpdateCorrespodent(String name_subdivision, String newName_subdivision, String position_correspodent,
+    public static void updateCorrespodent(String name_subdivision, String newName_subdivision, String position_correspodent,
                                           String newPosition_correspodent, String surname_name, String newSurname_name) {
         PreparedStatement updatingRecordCommand = null;
         try {
@@ -129,5 +127,20 @@ public class TableEditor {
             throwables.printStackTrace();
         }
     }
-
+    //удаление
+    public static void deleteCorrespodent(String name_subdivision, String position_correspodent, String surname_name) {
+        PreparedStatement deletingCorrespodent = null;
+        try {
+            Connection connection = DriverManager.getConnection(configs.dbConnection + configs.dbHost + configs.dbPort + configs.dbName , configs.dbUser, configs.dbPass);
+            System.out.println("Подключение произошло успешно: " + configs.dbConnection + configs.dbHost+ configs.dbPort+configs.dbName + "," + configs.dbUser + "," + configs.dbPass);
+            Statement statement = connection.createStatement();
+            deletingCorrespodent = connection.prepareStatement(Const.DELETE_CORRESPODENT);
+            deletingCorrespodent.setString(1, name_subdivision);
+            deletingCorrespodent.setString(2, position_correspodent);
+            deletingCorrespodent.setString(3, surname_name);
+            deletingCorrespodent.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

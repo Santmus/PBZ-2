@@ -26,6 +26,23 @@ public class SystemInterface {
       operation(operation);
   }
 
+  public void begin(){
+      System.out.printf("Добро пожаловать.\nКакую операцию вы хотите совершить?\n");
+      System.out.println("0. Выход");
+      System.out.println("1. Вывод информации о внутренних приказах,\n" +
+              "распоряжениях или других подобных документах.");
+      System.out.println("2. Вывод информации о корреспондентам.");
+      System.out.println("3. Просмотр списка исходящих корреспондентов, мероприятия по которым на\n" +
+              "заданную дату не были выполнены");
+      System.out.println("4. Просмотр списка мероприятий за заданный период");
+      System.out.println("5. Просмотр списка всех зафиксированных документов заданного типа (например,\n" +
+              "приказов) на текущую дату, отсортированных по дате документа");
+      System.out.println("6. Добавление/редактирование/удаление информации");
+      Scanner sout = new Scanner(System.in);
+      int operation = sout.nextInt();
+      operation(operation);
+  }
+
   public void operation(int operation) {
       if(operation == 0) System.exit(-0);
       else if(operation == 1) getInformationAboutCommand();
@@ -34,6 +51,8 @@ public class SystemInterface {
       else if(operation == 4) getInformationListOfEvents();
       else if (operation == 5) getInformationAboutDocument();
       else if (operation == 6) editTables();
+      else begin();
+
   }
 
   private void editTables() {
@@ -184,7 +203,7 @@ public class SystemInterface {
                   }
              break;
           }
-              case 2:{
+          case 2: {
                   Scanner scanner = new Scanner(System.in);
               System.out.println("Выберите действие:");
               System.out.println("1.Добавление информации о корресподентах.");
@@ -234,19 +253,33 @@ public class SystemInterface {
                       Scanner newSurnameName = new Scanner(System.in);
                       System.out.println("Введите новую ФИО корресподента: ");
                       String newSurname_name = newSurnameName.nextLine();
-                      TableEditor.UpdateCorrespodent(name_subdivision,newName_subdivision,position_correspodent,newPosition_correspodent,surname_name,newSurname_name);
+                      TableEditor.updateCorrespodent(name_subdivision,newName_subdivision,position_correspodent,newPosition_correspodent,surname_name,newSurname_name);
                       break;
                   }
+                  //удаление корресподента
                   case 3:{
+                      Scanner nameSubdivision = new Scanner(System.in);
+                      System.out.println("Введите номер подраздеения: ");
+                      String  name_subdivision = nameSubdivision.nextLine();
 
+                      Scanner positionСorrespodent =  new Scanner(System.in);
+                      System.out.println("Введите должность корресподента : ");
+                      String position_correspodent = positionСorrespodent.next();
+
+                      Scanner surnameName  = new Scanner(System.in);
+                      System.out.println("Введите ФИО корресподента: ");
+                      String  surname_name = surnameName.nextLine();
+
+                      TableEditor.deleteCorrespodent(name_subdivision,position_correspodent,surname_name);
                       break;
+
                   }
               }
             break;
               }
+          default: begin();
           }
       }
-
 
     private void getInformationAboutDocument() {
       Information.getInformationAboutDocument();
