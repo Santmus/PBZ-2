@@ -193,6 +193,19 @@ public class SystemInterface {
               int numb = scanner.nextInt();
               switch (numb){
                   case 1:{
+                      Scanner nameSubdivision = new Scanner(System.in);
+                      System.out.println("Введите номер подраздеения: ");
+                      String  name_subdivision = nameSubdivision.nextLine();
+
+                      Scanner positionСorrespodent =  new Scanner(System.in);
+                      System.out.println("Введите должность корресподента : ");
+                      String position_correspodent = positionСorrespodent.next();
+
+                      Scanner surnameТame  = new Scanner(System.in);
+                      System.out.println("Введите ФИО корресподента: ");
+                      String  surname_name = surnameТame.nextLine();
+                      TableEditor.addCorrespodent(name_subdivision,position_correspodent,surname_name);
+
                       break;
                   }
                   case 2:{

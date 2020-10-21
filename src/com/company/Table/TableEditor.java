@@ -90,4 +90,20 @@ public class TableEditor {
             throwables.printStackTrace();
         }
     }
+   //удаление
+    public static void addCorrespodent(String name_subdivision, String position_correspodent, String surname_name) {
+        PreparedStatement addingCorrespodent = null;
+        try {
+            Connection connection = DriverManager.getConnection(configs.dbConnection + configs.dbHost + configs.dbPort + configs.dbName , configs.dbUser, configs.dbPass);
+            System.out.println("Подключение произошло успешно: " + configs.dbConnection + configs.dbHost+ configs.dbPort+configs.dbName + "," + configs.dbUser + "," + configs.dbPass);
+            Statement statement = connection.createStatement();
+            addingCorrespodent = connection.prepareStatement(Const.INSERT_INTO_CORRESPODENT);
+            addingCorrespodent.setString(1, name_subdivision);
+            addingCorrespodent.setString(2, position_correspodent);
+            addingCorrespodent.setString(3, surname_name);
+            addingCorrespodent.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
