@@ -1,6 +1,7 @@
 package com.company.Interface;
 import com.company.Table.TableEditor;
 
+import java.sql.Date;
 import java.util.Scanner;
 /*
 SET @@global.time_zone = '+00:00'; - при запуске в mysql
@@ -40,6 +41,7 @@ public class SystemInterface {
       System.out.println("Что вы хотите изменить?\n1-Информацию о внутр.приказах\n2-Информацию о корреспондетах");
       int number = choose.nextInt();
       switch (number) {
+          //внутренние приказы
           case 1: {
               Scanner scanner = new Scanner(System.in);
               System.out.println("Выберите действие:");
@@ -48,6 +50,7 @@ public class SystemInterface {
               System.out.println("3.Удаление информаации о внутр.приказах.");
               int numb = scanner.nextInt();
               switch (numb){
+                  //добавление внутренних приказов
                   case 1:{
                       Scanner numberCommand = new Scanner(System.in);
                       System.out.println("Введите номер приказа: ");
@@ -55,7 +58,7 @@ public class SystemInterface {
 
                       Scanner dateCommand =  new Scanner(System.in);
                       System.out.println("Введите дату приказа: ");
-                      String  date_command = dateCommand.nextLine();
+                      String date_command = dateCommand.next();
 
                       Scanner contentCommand  = new Scanner(System.in);
                       System.out.println("Введите описание приказа: ");
@@ -76,16 +79,104 @@ public class SystemInterface {
                       Scanner checkDatePerformanceEvent = new Scanner(System.in);
                       System.out.println("Выполнен ли приказ: ");
                       String  check_date_performance_event = checkDatePerformanceEvent.nextLine();
-                      TableEditor.addRecordCorrespodents(number_command,date_command,content_command,event_command,responsible_for_implementation,date_performance_event,check_date_performance_event);
+
+                      TableEditor.addRecordCommand(number_command,date_command,content_command,event_command,responsible_for_implementation,date_performance_event,check_date_performance_event);
                       break;
                   }
-                  case 2 :{
+                  case 2 : {
+                      Scanner numberCommand = new Scanner(System.in);
+                      System.out.println("Введите номер приказа: ");
+                      String number_command = numberCommand.nextLine();
+
+                      Scanner newNumberCommand = new Scanner(System.in);
+                      System.out.println("Введите новый номер приказа: ");
+                      String newNumber_command = newNumberCommand.nextLine();
+
+                      Scanner dateCommand = new Scanner(System.in);
+                      System.out.println("Введите дату приказа: ");
+                      String date_command = dateCommand.nextLine();
+
+                      Scanner newDateCommand = new Scanner(System.in);
+                      System.out.println("Введите новую дату приказа: ");
+                      String newDate_command = newDateCommand.nextLine();
+
+                      Scanner contentCommand = new Scanner(System.in);
+                      System.out.println("Введите описание приказа: ");
+                      String content_command = contentCommand.nextLine();
+
+                      Scanner newContentCommand = new Scanner(System.in);
+                      System.out.println("Введите новое описание приказа: ");
+                      String newContent_command = newContentCommand.nextLine();
+
+                      Scanner eventCommand = new Scanner(System.in);
+                      System.out.println("Введите место выполнения приказа: ");
+                      String event_command = eventCommand.nextLine();
+
+                      Scanner newEventCommand = new Scanner(System.in);
+                      System.out.println("Введите новое место выполнения приказа: ");
+                      String newEvent_command = newEventCommand.nextLine();
+
+                      Scanner responsibleForImplementation = new Scanner(System.in);
+                      System.out.println("Введите отвественный за выполнение приказа: ");
+                      String responsible_for_implementation = responsibleForImplementation.nextLine();
+
+                      Scanner newResponsibleForImplementation = new Scanner(System.in);
+                      System.out.println("Введите нового отвественного за выполнение приказа: ");
+                      String newResponsible_for_implementation = newResponsibleForImplementation.nextLine();
+
+
+                      Scanner datePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Введите дату окончание выполнение приказа: ");
+                      String date_performance_event = datePerformanceEvent.nextLine();
+
+                      Scanner newDatePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Введите дату окончание выполнение приказа: ");
+                      String newDate_performance_event = newDatePerformanceEvent.nextLine();
+
+                      Scanner checkDatePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Выполнен ли приказ: ");
+                      String check_date_performance_event = checkDatePerformanceEvent.nextLine();
+
+                      Scanner newCheckDatePerformanceEvent = new Scanner(System.in);
+                      System.out.println("Выполнен ли приказ: ");
+                      String newCheck_date_performance_event = newCheckDatePerformanceEvent.nextLine();
+
+                      TableEditor.UpdateRecordCommand(number_command, newNumber_command, date_command,
+                              newDate_command, content_command, newContent_command, event_command, newEvent_command,
+                              responsible_for_implementation, newResponsible_for_implementation, date_performance_event,
+                              newDate_performance_event, check_date_performance_event, newCheck_date_performance_event);
+                      break;
+                  }
+                      case 3:
+                      {
+                          break;
+                      }
+                  }
+             break;
+          }
+              case 2:{
+                  Scanner scanner = new Scanner(System.in);
+              System.out.println("Выберите действие:");
+              System.out.println("1.Добавление информации о корресподентах.");
+              System.out.println("2.Редактирование информации о корресподентах .");
+              System.out.println("3.Удаление информаации о корресподентах.");
+              int numb = scanner.nextInt();
+              switch (numb){
+                  case 1:{
+                      break;
+                  }
+                  case 2:{
+                      break;
+                  }
+                  case 3:{
                       break;
                   }
               }
+            break;
+              }
           }
       }
-   }
+
 
     private void getInformationAboutDocument() {
       Information.getInformationAboutDocument();

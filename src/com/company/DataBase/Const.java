@@ -14,6 +14,8 @@ public class Const {
 
     public static final String INSERT_INTO_COMMAND = "INSERT INTO command (number_command, date_command, content_command, event_command, responsible_for_implementation, date_performance_event, check_date_performance_event) VALUES (?,?,?,?,?,?,?);";
 
+    public static final String UPDATE_COMMAND = "UPDATE command SET number_command = ? , date_command = ? , content_command = ? , event_command = ? , responsible_for_implementation = ? , date_performance_event = ? , check_date_performance_event = ? WHERE number_command = ? && date_command = ? && content_command = ? &&  event_command = ? && responsible_for_implementation = ? && date_performance_event = ? && check_date_performance_event = ?";
+
 
 
 }
